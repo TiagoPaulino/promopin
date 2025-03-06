@@ -26,7 +26,7 @@ export function ProductCard(props: ProductCardProps) {
             </h3>
           </div>
           <div>
-            <button className="font-bold flex justify-center">Ver Oferta</button>
+            <div className="font-bold flex justify-center">Ver Oferta</div>
           </div>
         </div>
       </Link>
