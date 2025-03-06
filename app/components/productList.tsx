@@ -4,7 +4,7 @@ import { Product } from "@/app/models/product";
 import {ProductCard} from "./productCard";
 
 export async function ProductList() {
-    const productList: { data: Product[] } =  await axios.get("http://localhost:3000/api/products/list");
+    const productList: { data: Product[] } =  await axios.get("https://promopin.vercel.app/api/products/list");
 
 
     return (
