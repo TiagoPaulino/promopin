@@ -1,5 +1,5 @@
 export interface Product {
-    id: string;
+    id?: string;
     title: string;
     description: string;
     url: string;
@@ -10,6 +10,6 @@ export interface Product {
     reviewVideos: string[];
     video?: string;
     clicks: number;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
