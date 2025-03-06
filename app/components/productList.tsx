@@ -2,9 +2,11 @@
 import axios from "axios";
 import { Product } from "@/app/models/product";
 import {ProductCard} from "./productCard";
+import { env } from "process";
 
 export async function ProductList() {
-    const productList: { data: Product[] } =  await axios.get("https://promopin.vercel.app/api/products/list");
+    const apiUrl = env.NEXT_PUBLIC_API_URL
+    const productList: { data: Product[] } =  await axios.get(`${apiUrl}/api/products/list`);
 
 
     return (
