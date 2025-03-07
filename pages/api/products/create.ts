@@ -4,14 +4,17 @@ import { Product } from '@/app/models/product';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
+    console.log('OPTIONS');
+    return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
+    console.log(req.method);
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
   try {
+    console.log("Create product");
     const token = req.headers.authorization?.split(' ')[1] || null;
     if (token !== process.env.API_AUTH_KEY) {
       return res.status(401).json({ message: 'Unauthorized' });
