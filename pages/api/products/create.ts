@@ -3,12 +3,6 @@ import prisma from '@/lib/prisma';
 import { Product } from '@/app/models/product';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // CORS: Adiciona os cabeçalhos para permitir requisições da sua extensão
-  res.setHeader('Access-Control-Allow-Origin', 'chrome-extension://ccnlngcckigaiffpbbadalidohbhojad'); // ID da sua extensão
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Métodos permitidos
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
-  
-  // Se a requisição for OPTIONS (preflight request), responde com 200 OK
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
