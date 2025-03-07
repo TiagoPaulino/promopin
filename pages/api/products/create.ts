@@ -60,6 +60,6 @@ export default async function handler(
   } catch (error) {
     return res
       .status(500)
-      .json({ message: "Erro ao criar produto", error, productData });
+      .json({ message: "Erro ao criar produto", error });
   }
 }
