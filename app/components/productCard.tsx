@@ -14,7 +14,7 @@ export function ProductCard(props: ProductCardProps) {
           <div className="w-full flex items-center justify-center overflow-hidden rounded-2xl ">
             <Image
               className="w-full h-full"
-              src={props.product.images[5]}
+              src={props.product.images[3]}
               alt="product"
               width={200}
               height={200}
