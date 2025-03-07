@@ -54,8 +54,7 @@ export default async function handler(
   try {
     const product = await prisma.product.create({
       data: productData, // Enviar os dados do produto no body da requisição
-    });
-
+    })
     return res.status(201).json(product);
   } catch (error) {
     return res
