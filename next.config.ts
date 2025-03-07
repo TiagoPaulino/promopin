@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "chrome-extension://fjkenfedaihomanollgdkblkbglfdbnl", // ID da sua extensão
+            value: "chrome-extension://ccnlngcckigaiffpbbadalidohbhojad", // ID da sua extensão
           },
           {
             key: "Access-Control-Allow-Methods",
