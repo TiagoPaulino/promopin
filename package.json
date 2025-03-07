@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prisma:disconnect": "node prisma/close-prisma.js",
-    "build": "npm run prisma:disconnect && prisma generate && next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
