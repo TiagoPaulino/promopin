@@ -3,12 +3,12 @@ export interface Product {
     title: string;
     description: string;
     url: string;
-    afiliate?: string;
-    afiliateLink?: string;
-    price?: number;
+    afiliate?: string | null;
+    afiliateLink?: string|null;
+    price?: number | null;
     images: string[];
     reviewVideos: string[];
-    video?: string;
+    video?: string | null;
     clicks: number;
     createdAt?: Date;
     updatedAt?: Date;
