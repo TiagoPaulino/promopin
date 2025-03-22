@@ -5,7 +5,7 @@ import {ProductList}  from "./components/productList";
 export default function Home() {
   
   return (
-    <div className="flex flex-col pt-10">
+    <div className="flex flex-col items-center pt-10 gap-5">
       <Header/>
       <ProductList />
     </div>
