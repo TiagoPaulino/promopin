@@ -36,11 +36,11 @@ export class ProductPrismaRepository implements Repository<Product> {
     async findById(id: string): Promise<Product | null> {
         try{
             const prisma = new PrismaClient();
-            const product = await prisma.product.findUnique({ where: { id } });
+            const product = await prisma.product.findUnique({ where: { id: String(id) } });
             prisma.$disconnect();
             return product;
         }catch (error) {
-            throw new Error("Erro ao buscar produto");
+            throw new Error(`Erro ao buscar produto ${error}`);
         }
     }
     async findAll(): Promise<Product[] | []> {
