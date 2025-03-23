@@ -1,3 +1,4 @@
+import Carroussel from "@/app/components/productPage/Carroussel";
 import { Product } from "@/app/models/product";
 
 export default async function ProductPage({ params }: { params: { productId: string } }) {
@@ -14,8 +15,11 @@ export default async function ProductPage({ params }: { params: { productId: str
 
     return (
         <div>
-            <h1>{product?.title || "Produto não encontrado"}</h1>
-            <p>{product?.description}</p>
+            <h1>{product.title}</h1>
+            <div className="flex items-center justify-center w-full">
+                <Carroussel images={product.images} />
+            </div>
+            
         </div>
     );
 }
