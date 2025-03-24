@@ -9,12 +9,12 @@ interface ProductCardProps {
 export function ProductCard(props: ProductCardProps) {
   return (
     <div>
-      <Link href={props.product.afiliate || props.product.url} target="_blank" >
+      <Link href={`/product/${props.product.id}`} >
         <div className="w-full flex flex-col gap-2 max-h-80 border border-gray-300 p-3 rounded-2xl bg-white hover:shadow-2xl">
           <div className="w-full flex items-center justify-center overflow-hidden rounded-2xl ">
             <Image
               className="w-full h-full"
-              src={props.product.images[3]}
+              src={props.product.images[0]}
               alt="product"
               width={200}
               height={200}
@@ -26,7 +26,9 @@ export function ProductCard(props: ProductCardProps) {
             </h3>
           </div>
           <div>
-            <div className="font-bold flex justify-center">Ver Oferta</div>
+            <a
+              href={props.product.afiliate || props.product.afiliateLink || props.product.url}
+             className="font-bold flex justify-center">Ver Oferta</a>
           </div>
         </div>
       </Link>
