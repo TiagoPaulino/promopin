@@ -1,7 +1,6 @@
 export default function Carroussel({ images }: { images: string[] }) {
   return (
-    <div>
-      <div className="carousel w-full h-full">
+      <div className="carousel w-full h-full ">
         {images.map((image, index) => (
           image !== "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lzp4a6zr9hdte6" &&
           <div key={index} id={`slide${index + 1}`} className="carousel-item relative w-full h-full">
@@ -17,6 +16,5 @@ export default function Carroussel({ images }: { images: string[] }) {
           </div>
         ))}
       </div>
-    </div>
   );
 }
