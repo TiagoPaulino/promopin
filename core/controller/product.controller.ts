@@ -19,7 +19,6 @@ class ProductController {
         return await this.productRepository.findById(id);
     }
     async findAllProducts(){
-        console.log("findAllProducts");
         return await this.productRepository.findAll();
     }
 }
