@@ -3,12 +3,11 @@ import VideoReviews from "@/app/components/productPage/VideoReviews";
 import { Product } from "@/app/models/product";
 import Link from "next/link";
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { productId: string };
-}) {
-  const { productId } = await params;
+
+
+export default async function ProductPage({ params }: { params: any }){
+  const {productId} = await params; // Agora garantimos que é string
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/products/find?productId=${productId}`,
     {
@@ -29,7 +28,9 @@ export default async function ProductPage({
           <Carroussel images={product.images} />
         </div>
         <div className="py-5 px-3 flex gap-5 flex-col bg-white rounded-2xl md:w-1/2 md:rounded-l-none md:justify-between">
-          <h1 className="text-2xl font-bold line-clamp-3 md:line-clamp-none">{product.title}</h1>
+          <h1 className="text-2xl font-bold line-clamp-3 md:line-clamp-none">
+            {product.title}
+          </h1>
           <Link
             className="font-bold flex justify-center text-2xl rounded-2xl bg-black text-white py-2"
             href={product.afiliate || product.afiliateLink || product.url}
@@ -41,7 +42,7 @@ export default async function ProductPage({
       </div>
       <div className="py-5 px-3 flex gap-5 flex-col bg-white rounded-2xl">
         <p className="line-clamp-3 ">{product.description}</p>
-        {product.reviewVideos.length != 0 && (
+        {product.reviewVideos.length !== 0 && (
           <VideoReviews videos={product.reviewVideos} />
         )}
         <div className="flex flex-col gap-2">
@@ -49,14 +50,16 @@ export default async function ProductPage({
           <div className="grid grid-cols-2 gap-2 pt-2 md:grid-cols-3">
             {product.images.map(
               (image, index) =>
-                image !=
+                image !==
                   "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lzp4a6zr9hdte6" && (
-                  <div key={index} className="w-full h-full overflow-hidden rounded-2xl">
+                  <div
+                    key={index}
+                    className="w-full h-full overflow-hidden rounded-2xl"
+                  >
                     <img
                       src={image}
                       className="w-full hover:scale-120 rounded-2xl transition duration-300 ease-in-out"
                       alt="product"
-                      key={index}
                     />
                   </div>
                 )
