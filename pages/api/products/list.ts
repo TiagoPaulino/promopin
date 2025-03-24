@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '@/lib/prisma';
+import { productController } from '@/core/controller/product.controller';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'GET') {
@@ -7,8 +7,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     try {
-        const products = await prisma.product.findMany();
-        return res.status(200).json(products);
+        const products = await productController.findAllProducts();
+        return res.status(200).json(products.reverse());
     } catch (error) {
         return res.status(500).json({ message: 'Erro ao listar produtos', error });
     }

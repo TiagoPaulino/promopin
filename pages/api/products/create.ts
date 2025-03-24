@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "@/lib/prisma";
 import { Product } from "@/app/models/product";
+import { productController } from "@/core/controller/product.controller";
 
 export default async function handler(
   req: NextApiRequest,
@@ -52,9 +52,10 @@ export default async function handler(
     clicks: 0,
   };
   try {
-    const product = await prisma.product.create({
-      data: productData, // Enviar os dados do produto no body da requisição
-    })
+    const product = await productController.createProduct(productData);
+    // const product = await prisma.product.create({
+    //   data: productData, // Enviar os dados do produto no body da requisição
+    // })
     return res.status(201).json(product);
   } catch (error) {
     return res
