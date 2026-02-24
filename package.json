@@ -13,7 +13,7 @@
     "@prisma/client": "^6.4.1",
     "@types/axios": "^0.9.36",
     "axios": "^1.8.1",
-    "next": "15.2.1",
+    "next": "15.2.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
